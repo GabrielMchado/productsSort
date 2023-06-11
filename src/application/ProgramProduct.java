@@ -17,13 +17,9 @@ public class ProgramProduct {
 		list.add(new Products("Notebook", 1200.0));
 		list.add(new Products("Tablet", 450.0));
 
-		Comparator<Products> comp = new Comparator<Products>() {
-			@Override
-			public int compare(Products o1, Products o2) {
-				return o1.getName().toUpperCase().compareTo(o2.getName().toUpperCase());
-			}
+		Comparator<Products> comp = (o1, o2) -> {
+			return o1.getName().toUpperCase().compareTo(o2.getName().toUpperCase());
 		};
-		
 		
 		list.sort(comp);
 		
